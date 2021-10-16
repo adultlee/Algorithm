@@ -9,3 +9,14 @@
 
 두 배열의 교집합의 숫자를 비교하여 교집합 => 최저 수 
                            교집합 + 0의 개수 => 최대 수 
+
+``` js
+var filtered_arr = lottos.filter((x) => win_nums.includes(x));
+
+```
+위의 코드와 같이 filter함수를 이용하면 배열 내부의 인자들에 직접 접근하여 포함되어 있는 값들만 가져오는 교집합이 가능하다.
+반대로 win_nums.includes(x)에 !를 사용한다면 반대로 차집합이 가능해진다.
+차집합의 경우 어느 집합에서 삭제하냐에 따라 결과가 달라지므로 고려가 중요하다.
+
+[링크] (https://programmers.co.kr/learn/courses/30/lessons/77484?language=javascript). 
+
