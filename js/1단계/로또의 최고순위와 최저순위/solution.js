@@ -1,29 +1,33 @@
 function solution(lottos, win_nums) {
-
-    var zero_arr = [0 , 0 , 0 , 0 , 0 , 0];
-    var zero_count_arr = lottos.filter(x => zero_arr.includes(x));
-    const zero_count = zero_count_arr.length;
-    var filtered_arr = lottos.filter((x) => win_nums.includes(x));
-    const filtered_count = filtered_arr.length;
-    var min;
-    if(filtered_count >= 2){
-     min = 7 - filtered_count;
+  let zeroArr = lottos.filter((x) => {
+    return x == 0;
+  });
+  let sameArr = win_nums.filter((x) => lottos.includes(x));
+  let zeroArrCount = zeroArr.length;
+  let sameArrCount = sameArr.length;
+  let min, max;
+  // 5개 맞으면 최대 1등, 최소 2등
+  if (sameArrCount == 6) {
+    max = 1;
+    min = 1;
+  } else {
+    max = 7 - sameArrCount - zeroArrCount;
+    if (sameArrCount == 0) {
+      max = 6;
+      min = 6;
     }
-    else
-    {
-        min = 6;
+    min = 7 - sameArrCount;
+    if (zeroArrCount == 6) {
+      min = 6;
     }
-    var max = 7 - filtered_count - zero_count; // 이 경우 filtered_count가 0이 되면서 zero_count도 0인 경우 max 가 7이 되며 문제가 발생한다.
+  }
 
-   
-    var answer = [max, min];
-    console.log(min)
-    console.log(zero_count);
-    console.log(answer)
-    return answer;
+  let answer = [max, min];
+  console.log(answer);
+  return answer;
 }
-const lottos = [0 ,3 ,2 ,1,0  ,0];
-const win_nums = [1 , 2 , 4, 5,3,6];
 
-solution(lottos , win_nums);
+const lottos = [0, 0, 0, 0, 0, 0];
+const win_nums = [38, 19, 20, 40, 15, 25];
 
+solution(lottos, win_nums);

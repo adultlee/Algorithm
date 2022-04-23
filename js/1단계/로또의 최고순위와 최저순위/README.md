@@ -7,16 +7,17 @@
 내가 가진 숫자는 lotto 이며 0 ~45의 숫자를 가집니다. 0만이 중복을 가집니다.
 0은 자유롭게 어떤 수든 될수 있는 예측이 가능한 숫자입니다. 0의 숫자를 이용하여 로또의 최고 등수와 최저 등수를 예측합니다.
 
-두 배열의 교집합의 숫자를 비교하여 교집합 => 최저 수 
-                           교집합 + 0의 개수 => 최대 수 
+두 배열의 교집합의 숫자를 비교하여 교집합 => 최저 수
+교집합 + 0의 개수 => 최대 수
 
-``` js
+```js
 var filtered_arr = lottos.filter((x) => win_nums.includes(x));
-
 ```
+
 위의 코드와 같이 filter함수를 이용하면 배열 내부의 인자들에 직접 접근하여 포함되어 있는 값들만 가져오는 교집합이 가능하다.
 반대로 win_nums.includes(x)에 !를 사용한다면 반대로 차집합이 가능해진다.
 차집합의 경우 어느 집합에서 삭제하냐에 따라 결과가 달라지므로 고려가 중요하다.
 
-[링크] (https://programmers.co.kr/learn/courses/30/lessons/77484?language=javascript). 
+filter 의 결과는 배열 형태로 return 이 되며 includes는 효율적으로 배열의 원소들간의 비교가 가능하다.
 
+[링크] (https://programmers.co.kr/learn/courses/30/lessons/77484?language=javascript).
