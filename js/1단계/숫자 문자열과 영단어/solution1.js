@@ -16,7 +16,7 @@ function solution(s) {
   for (let i = 0; i < numbers.length; i++) {
     let arr = answer.split(numbers[i]);
     // console.log(i);
-    // console.log(arr);
+    console.log(arr);
     answer = arr.join(i);
   }
 
