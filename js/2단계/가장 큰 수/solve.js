@@ -16,7 +16,6 @@ function solution1(numbers) {
   var temp = answer
     .sort((a, b) => {
       console.log(a + " " + b);
-
       return b + a - (a + b);
     })
     .join("");
