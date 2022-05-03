@@ -3,7 +3,7 @@ const solution = (record) => {
 
   //1. 먼저 배열을 하나 생성해 2차원 배열로 split을 한다.
   let newArr = record.map((str) => str.split(" "));
-
+  console.log(newArr);
   //2. 그 후 기록의 마지막 닉네임을 아이디와 매칭합니다.
   //2.1 여기서 Enter와 Change 가 length가 3임을 이용하면 더 쉽게 접근할 수 있습니다.
   let nickNameSet = {};
@@ -24,3 +24,12 @@ const solution = (record) => {
 
   return answer;
 };
+
+let record = [
+  "Enter uid1234 Muzi",
+  "Enter uid4567 Prodo",
+  "Leave uid1234",
+  "Enter uid1234 Prodo",
+  "Change uid4567 Ryan",
+];
+solution(record);

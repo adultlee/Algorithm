@@ -1,0 +1,1 @@
+profile[j][1] = doc[i][2];
